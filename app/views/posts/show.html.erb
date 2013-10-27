@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+<section>
+  <h1>Response</h1>
+  <%= render 'shared/contact_form' %>
+</section>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', admin_path %>

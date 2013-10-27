@@ -1,0 +1,57 @@
+
+<%= collection_select(:category, :category_id, Category.all, :id, :name) %>
+<%= options_from_collection_for_select(Category.all, :id, :name) %>
+<% if signed_in? %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <%= render 'shared/user_info' %>
+        </section>
+        <section>
+          <% @posts.each do |post| %>
+              <li>
+                <span class="content"><%= post.content %></span>
+            <span class="timestamp">
+            Posted <%= time_ago_in_words(post.created_at) %> ago..<br>
+            Create by <%= link_to post.user.name, post_path(post) %> <br>
+            Category <%= post.category.name %>
+             </span>
+                <% if current_user?(post.user) %>
+                    <%= link_to "delete", post, method: :delete,
+                                data: { confirm: "You sure?" },
+                                title: post.content %>
+                <% end %>
+              </li>
+          <% end %>
+        </section>
+        <section>
+          <%= render 'shared/post_form' %>
+        </section>
+      </aside>
+    </div>
+<% else %>
+    <div class="microposts">
+      <h1>CraigList Minimal</h1>
+      <section>
+
+        <% @posts.each do |post| %>
+            <li>
+           <span class="content"><%= post.content %></span>
+            <span class="timestamp">
+            Posted <%= time_ago_in_words(post.created_at) %> ago.<br>
+            Contact to <%= link_to post.user.name, post_path(post) %><br>
+            Category <%= post.category.name %>
+             </span>
+              <% if current_user?(post.user) %>
+                  <%= link_to "delete", post, method: :delete,
+                              data: { confirm: "You sure?" },
+                              title: post.content %>
+              <% end %>
+            </li>
+        <% end %>
+
+      </section>
+      <%= link_to "Sign up now!", signup_path,
+                  class: "btn btn-large btn-primary" %>
+    </div>
+<% end %>

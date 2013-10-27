@@ -1,9 +1,24 @@
 Craiglistnew::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  resources :categories
+  resources :responses
+  resources :users
+  resources :posts
+  resources :sessions, only: [:new, :create, :destroy]
+  #resources :posts, only: [:create, :destroy, :index, :update]
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get "static_pages/home"
+  root  'static_pages#home'
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/home', to: 'static_pages#home', via: 'get'
+  match '/contact', to: 'static_pages#_contact', via: 'get'
+  match '/buscar', to: 'static_pages#buscar', via: 'get'
+  get "users/new"
+  get "users/index"
+  get 'admin' => 'admin#dashboard', as: :admin
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

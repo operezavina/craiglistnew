@@ -1,0 +1,44 @@
+<h1>Listing adverts</h1>
+<br>
+<%= form_tag("/post", method: "get") do %>
+    <%= label_tag(:name, "Search for:") %>
+    <%= text_field_tag(:name) %>
+    <%= submit_tag("search") %>
+<% end %>
+<table>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Approved</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.user.name %></td>
+        <td><%= post.content %></td>
+        <td><%= post.category.name %></td>
+        <td><%= post.approved %></td>
+        <% if current_user.admin? %>
+            <td><%= link_to 'Show', post_path(post) %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if session[:current_user_id] %>
+    <%= link_to 'New Advert', new_advert_path %>
+<% else %>
+    <%= link_to 'Register', new_user_path %>
+    <%= link_to "Back", root_path %>
+<% end %>

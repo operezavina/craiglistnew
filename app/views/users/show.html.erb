@@ -1,0 +1,38 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for (@user) %>
+        <%= @user.name %>
+      </h1>
+    </section>
+   <section>
+     <% @user.posts.each do |post| %>
+         <li>
+           <span class="content"><%= post.content %></span>
+            <span class="timestamp">
+            Posted <%= time_ago_in_words(post.created_at) %> ago..<br>
+            Create by <%= link_to post.user.name, post_path(post) %> <br>
+            Category <%= post.category.name %>
+             </span>
+           <% if current_user?(post.user) %>
+               <%= link_to "delete", post, method: :delete,
+                           data: { confirm: "You sure?" },
+                           title: post.content %>
+           <% end %>
+         </li>
+         <%= post.responses.each do |response| %>
+          <li>
+            <h3>Requiest</h3>
+            <span class="content"><%= response.email_visitor %></span>
+            <span class="content"><%= response.content_visitor %></span>
+          </li>
+          <hr>
+         <%end %>
+     <% end %>
+   </section>
+
+  </aside>
+
+</div>

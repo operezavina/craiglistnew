@@ -1,0 +1,21 @@
+<% provide(:title, "Edit post") %>
+<h1>Update </h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@post) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        User post <%= @post.user.name %><br>
+        <br><%= f.label :content %>
+        <br><%= f.text_field :content %>
+
+        <% if current_user.admin? %>
+            <div class="field">
+              <%= f.label :approved %><br>
+              <%= f.check_box :approved %>
+            </div>  <br>
+        <% end %>
+        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

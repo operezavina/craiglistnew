@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'bcrypt-ruby', '3.0.1'
+gem 'faker', '1.1.2'
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+gem "paperclip", "~> 3.0"
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -32,6 +38,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+group :test do
+  gem 'spork-rails'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'rb-fsevent', :require => false
+  #gem 'growl' # mac only
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

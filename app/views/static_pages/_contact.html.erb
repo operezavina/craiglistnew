@@ -1,0 +1,11 @@
+<%= form_for(@response) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email_visitor %>
+    </div>
+    <div class="field">
+      <%= f.text_area :content_visitor, placeholder: "Compose new response..." %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
