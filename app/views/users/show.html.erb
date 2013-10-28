@@ -24,9 +24,10 @@
          </li>
          <%= post.responses.each do |response| %>
           <li>
-            <h3>Requiest</h3>
+            <h3>Comments</h3>
             <span class="content"><%= response.email_visitor %></span>
             <span class="content"><%= response.content_visitor %></span>
+            Posted <%= time_ago_in_words(response.created_at) %> ago..<br>
           </li>
           <hr>
          <%end %>

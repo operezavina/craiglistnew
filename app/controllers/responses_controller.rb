@@ -8,7 +8,7 @@ class ResponsesController < ApplicationController
       flash[:success] = "Response created!"
       redirect_to @response.post.user
     else
-      @feed_items = []
+
       render 'users#show'
     end
   end
