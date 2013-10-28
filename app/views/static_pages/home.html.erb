@@ -1,8 +1,8 @@
-
+<h3>CraigList Minimal</h3>
 <%= form_tag("/home", method: "get") do %>
     <%= label_tag(:name, "Search for:") %>
     <%= collection_select(:category, :category_id, Category.all, :id, :name) %>
-    <%= submit_tag("Search") %><%= link_to "  Show all  ", root_path %>
+    <%= submit_tag("Apply") %><%= link_to "  Show all  ", root_path %>
 <% end %>
 
 <% if signed_in? %>
@@ -35,7 +35,6 @@
     </div>
 <% else %>
     <div class="microposts">
-      <h3>CraigList Minimal</h3>
       <section>
         <% @posts.each do |post| %>
             <div class="img"><li>

@@ -1,9 +1,9 @@
 <h1>Listing adverts</h1>
 <br>
-<%= form_tag("/post", method: "get") do %>
+<%= form_tag("/posts", method: "get") do %>
     <%= label_tag(:name, "Search for:") %>
-    <%= text_field_tag(:name) %>
-    <%= submit_tag("search") %>
+    <%= collection_select(:category, :category_id, Category.all, :id, :name) %>
+    <%= submit_tag("Apply") %><%= link_to "  Show all  ", posts_path %>
 <% end %>
 <table>
   <thead>
