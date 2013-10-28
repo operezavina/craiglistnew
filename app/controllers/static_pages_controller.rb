@@ -2,12 +2,17 @@ class StaticPagesController < ApplicationController
   def home
     if signed_in?
       @post  = current_user.posts.build
-      @posts = Post.where(approved:true).paginate(page: params[:page])
+      if !params[:category].nil?
+        @posts = Post.where(category_id:params[:category][:category_id]).paginate(page: params[:page])
+      else
+        @posts = Post.where(approved:true).paginate(page: params[:page])
+      end
 
     else
-      @posts = Post.where(approved:true).paginate(page: params[:page])
-      if !params[:category_id].nil?
-      @posts = @posts.find_by_category(params[:category][:category_id])
+      if !params[:category].nil?
+      @posts = Post.where(category_id:params[:category][:category_id]).paginate(page: params[:page])
+      else
+        @posts = Post.where(approved:true).paginate(page: params[:page])
       end
     end
   end

@@ -2,7 +2,7 @@
 <%= form_tag("/home", method: "get") do %>
     <%= label_tag(:name, "Search for:") %>
     <%= collection_select(:category, :category_id, Category.all, :id, :name) %>
-    <%= submit_tag("Buscar") %>
+    <%= submit_tag("Search") %><%= link_to "  Show all  ", root_path %>
 <% end %>
 
 <% if signed_in? %>
@@ -35,9 +35,8 @@
     </div>
 <% else %>
     <div class="microposts">
-      <h1>CraigList Minimal</h1>
+      <h3>CraigList Minimal</h3>
       <section>
-
         <% @posts.each do |post| %>
             <li>
            <span class="content"><%= post.content %></span>
@@ -53,7 +52,6 @@
               <% end %>
             </li>
         <% end %>
-
       </section>
       <%= link_to "Sign up now!", signup_path,
                   class: "btn btn-large btn-primary" %>
