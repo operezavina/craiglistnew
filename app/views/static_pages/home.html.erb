@@ -13,8 +13,8 @@
         </section>
         <section>
           <% @posts.each do |post| %>
-              <li>
-                <span class="content"><%= post.content %></span>
+              <div class="img"><li>
+            <span class="content"><%= post.content %></span>
             <span class="timestamp">
             Posted <%= time_ago_in_words(post.created_at) %> ago..<br>
             Create by <%= link_to post.user.name, post_path(post) %> <br>
@@ -25,7 +25,7 @@
                                 data: { confirm: "You sure?" },
                                 title: post.content %>
                 <% end %>
-              </li>
+              </li></div>
           <% end %>
         </section>
         <section>
@@ -38,7 +38,7 @@
       <h3>CraigList Minimal</h3>
       <section>
         <% @posts.each do |post| %>
-            <li>
+            <div class="img"><li>
            <span class="content"><%= post.content %></span>
             <span class="timestamp">
             Posted <%= time_ago_in_words(post.created_at) %> ago.<br>
@@ -50,7 +50,7 @@
                               data: { confirm: "You sure?" },
                               title: post.content %>
               <% end %>
-            </li>
+            </li> </div>
         <% end %>
       </section>
       <%= link_to "Sign up now!", signup_path,
