@@ -43,12 +43,14 @@ group :development, :test do
 end
 group :test do
   gem 'spork-rails'
-  gem 'selenium-webdriver'
-  gem 'capybara'
-  gem 'database_cleaner'
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'rb-fsevent', :require => false
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.2.1'
+  gem 'cucumber-rails', '1.4.0', :require => false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
   #gem 'growl' # mac only
 end
 # Use ActiveModel has_secure_password

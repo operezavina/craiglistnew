@@ -3,7 +3,8 @@
   <data-source source="LOCAL" name="Rails craiglistnew: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="8630a32b-dae1-4831-bb34-f42d377aba9a">
     <jdbc-driver>org.postgresql.Driver</jdbc-driver>
     <jdbc-url>jdbc:postgresql:craiglistnew_test</jdbc-url>
-    <user-name>craiglistnew</user-name>
+    <user-name>vagrant</user-name>
+    <user-password>dfdadfd8dfcbdfdcdfc5</user-password>
     <libraries>
       <library>
         <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-driver-license.txt</url>
@@ -16,7 +17,8 @@
   <data-source source="LOCAL" name="Rails craiglistnew: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="7f7fcd20-8d4a-441b-a5d7-8ce429345c20">
     <jdbc-driver>org.postgresql.Driver</jdbc-driver>
     <jdbc-url>jdbc:postgresql:craiglistnew_development</jdbc-url>
-    <user-name>craiglistnew</user-name>
+    <user-name>vagrant</user-name>
+    <user-password>dfdadfd8dfcbdfdcdfc5</user-password>
     <libraries>
       <library>
         <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-driver-license.txt</url>
@@ -29,7 +31,22 @@
   <data-source source="LOCAL" name="Rails craiglistnew: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="06a68c9f-7875-497e-a21c-951ae362fa17">
     <jdbc-driver>org.postgresql.Driver</jdbc-driver>
     <jdbc-url>jdbc:postgresql:craiglistnew_production</jdbc-url>
-    <user-name>craiglistnew</user-name>
+    <user-name>vagrant</user-name>
+    <user-password>dfdadfd8dfcbdfdcdfc5</user-password>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-driver-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-9.2-1002.jdbc4.jar</url>
+      </library>
+    </libraries>
+  </data-source>
+  <data-source source="LOCAL" name="Rails craiglistnew: cucumber" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="50291360-b1fa-4f61-8c2b-5b3c38629859">
+    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+    <jdbc-url>jdbc:postgresql:craiglistnew_test</jdbc-url>
+    <user-name>vagrant</user-name>
+    <user-password>dfdadfd8dfcbdfdcdfc5</user-password>
     <libraries>
       <library>
         <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-driver-license.txt</url>
