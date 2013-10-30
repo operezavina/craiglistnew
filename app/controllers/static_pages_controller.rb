@@ -3,14 +3,14 @@ class StaticPagesController < ApplicationController
     if signed_in?
       @post  = current_user.posts.build
       if !params[:category].nil?
-        @posts = Post.where(category_id:params[:category][:category_id]).paginate(page: params[:page])
+        @posts = Post.where(category_id:params[:category][:category_id]).paginate(page: params[:page]).where(approved:true)
       else
         @posts = Post.where(approved:true).paginate(page: params[:page])
       end
 
     else
       if !params[:category].nil?
-      @posts = Post.where(category_id:params[:category][:category_id]).paginate(page: params[:page])
+      @posts = Post.where(category_id:params[:category][:category_id]).paginate(page: params[:page]).where(approved:true)
       else
         @posts = Post.where(approved:true).paginate(page: params[:page])
       end

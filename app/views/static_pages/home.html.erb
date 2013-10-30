@@ -6,8 +6,8 @@
 <% end %>
 
 <% if signed_in? %>
-    <div class="row">
-      <aside class="span4">
+    <div class="microposts">
+
         <section>
           <%= render 'shared/user_info' %>
         </section>
@@ -31,7 +31,7 @@
         <section>
           <%= render 'shared/post_form' %>
         </section>
-      </aside>
+
     </div>
 <% else %>
     <div class="microposts">
