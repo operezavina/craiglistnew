@@ -4,4 +4,5 @@ class Post < ActiveRecord::Base
   belongs_to :category
   validates :content, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
+  has_attached_file :photo
 end
