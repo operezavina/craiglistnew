@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fee7cd-3acb-423e-b7ea-c0dd96158965" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131030005500_add_photo_to_posts.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_post_form.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_post_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/requests/admin_pages_spec.rb" afterPath="$PROJECT_DIR$/spec/requests/admin_pages_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/category_spec.rb" afterPath="$PROJECT_DIR$/spec/models/category_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/post.rb" afterPath="$PROJECT_DIR$/app/models/post.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="70fee7cd-3acb-423e-b7ea-c0dd96158965" name="Default" comment="" />
     <ignored path="craiglistnew.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="70fee7cd-3acb-423e-b7ea-c0dd96158965" time="1383094351705" ignored="false" />
