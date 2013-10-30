@@ -4,5 +4,5 @@ class Post < ActiveRecord::Base
   belongs_to :category
   validates :content, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
-  has_attached_file :photo, :default_url => "/images/descarga.jpg"
+  has_attached_file :photo, :default_url => "descarga.jpg"
 end

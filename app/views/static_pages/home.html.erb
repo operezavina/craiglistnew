@@ -13,7 +13,7 @@
         </section>
         <section>
           <% @posts.each do |post| %>
-              <div class="img"><li>
+              <div class="img"><%= image_tag post.photo.url %><li>
             <span class="content"><%= post.content %></span>
             <span class="timestamp">
             Posted <%= time_ago_in_words(post.created_at) %> ago..<br>
